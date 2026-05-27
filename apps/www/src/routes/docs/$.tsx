@@ -8,6 +8,7 @@ import { sectionSidebar, sectionSlugFromUrl } from '@/lib/tree';
 import { DocsLayout } from '@/components/docs-layout';
 import { deriveTabs } from '@/components/site-shell';
 import { useMDXComponents } from '@/components/mdx';
+import { OG_IMAGE, SITE_DESCRIPTION, SITE_NAME, absoluteUrl } from '@/lib/site';
 
 export const Route = createFileRoute('/docs/$')({
   component: Page,
@@ -16,6 +17,28 @@ export const Route = createFileRoute('/docs/$')({
     const data = await serverLoader({ data: slugs });
     await clientLoader.preload(data.path);
     return data;
+  },
+  head: ({ loaderData }) => {
+    const title = loaderData?.title
+      ? `${loaderData.title} — ${SITE_NAME}`
+      : `Docs — ${SITE_NAME}`;
+    const description = loaderData?.description ?? SITE_DESCRIPTION;
+    const canonical = loaderData?.url ? absoluteUrl(loaderData.url) : undefined;
+    return {
+      meta: [
+        { title },
+        { name: 'description', content: description },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:title', content: title },
+        { property: 'og:description', content: description },
+        ...(canonical ? [{ property: 'og:url', content: canonical }] : []),
+        { property: 'og:image', content: OG_IMAGE },
+        { name: 'twitter:title', content: title },
+        { name: 'twitter:description', content: description },
+        { name: 'twitter:image', content: OG_IMAGE },
+      ],
+      links: canonical ? [{ rel: 'canonical', href: canonical }] : [],
+    };
   },
 });
 
@@ -29,6 +52,8 @@ const serverLoader = createServerFn({ method: 'GET' })
     return {
       path: page.path,
       url: page.url,
+      title: page.data.title as string | undefined,
+      description: page.data.description as string | undefined,
       tabs: deriveTabs(tree),
       sidebar: sectionSidebar(tree, sectionSlugFromUrl(page.url)),
       pageTree: await source.serializePageTree(tree),

@@ -2,10 +2,53 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
 import { source } from '@/lib/source'
 import { SiteShell, deriveTabs } from '@/components/site-shell'
+import {
+  NPM_PACKAGE,
+  OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_REPO,
+  SITE_TITLE,
+  SITE_URL,
+} from '@/lib/site'
+
+const softwareJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  applicationCategory: 'DeveloperApplication',
+  operatingSystem: 'Any',
+  url: SITE_URL,
+  downloadUrl: `https://www.npmjs.com/package/${NPM_PACKAGE}`,
+  codeRepository: SITE_REPO,
+  programmingLanguage: 'TypeScript',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+}
 
 export const Route = createFileRoute('/')({
   component: Home,
   loader: () => loader(),
+  head: () => ({
+    meta: [
+      { title: SITE_TITLE },
+      { name: 'description', content: SITE_DESCRIPTION },
+      { property: 'og:title', content: SITE_TITLE },
+      { property: 'og:description', content: SITE_DESCRIPTION },
+      { property: 'og:url', content: SITE_URL },
+      { property: 'og:image', content: OG_IMAGE },
+      { name: 'twitter:title', content: SITE_TITLE },
+      { name: 'twitter:description', content: SITE_DESCRIPTION },
+      { name: 'twitter:image', content: OG_IMAGE },
+    ],
+    links: [{ rel: 'canonical', href: SITE_URL }],
+    scripts: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify(softwareJsonLd),
+      },
+    ],
+  }),
 })
 
 const loader = createServerFn({ method: 'GET' }).handler(async () => ({
