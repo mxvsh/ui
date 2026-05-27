@@ -1,0 +1,234 @@
+---
+title: Card
+description: Groups related content and actions in a structured surface.
+---
+
+<Preview>
+  <Card className="w-96">
+    <CardHeader>
+      <div>
+        <CardTitle>Sign in</CardTitle>
+        <CardDescription>Use your workspace account.</CardDescription>
+      </div>
+    </CardHeader>
+    <CardContent>
+      <form className="flex flex-col gap-4">
+        <label className="flex flex-col gap-1.5 text-sm font-medium">
+          Email
+          <Input type="email" placeholder="you@example.com" />
+        </label>
+        <label className="flex flex-col gap-1.5 text-sm font-medium">
+          Password
+          <Input type="password" placeholder="Enter your password" />
+        </label>
+        <Button tone="primary" className="mt-1">
+          Sign in
+        </Button>
+      </form>
+    </CardContent>
+  </Card>
+</Preview>
+
+```tsx
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Input,
+} from "@mxv/ui"
+
+<Card>
+  <CardHeader>
+    <div>
+      <CardTitle>Sign in</CardTitle>
+      <CardDescription>Use your workspace account.</CardDescription>
+    </div>
+  </CardHeader>
+  <CardContent>
+    <form className="flex flex-col gap-4">
+      <label className="flex flex-col gap-1.5 text-sm font-medium">
+        Email
+        <Input type="email" placeholder="you@example.com" />
+      </label>
+      <label className="flex flex-col gap-1.5 text-sm font-medium">
+        Password
+        <Input type="password" placeholder="Enter your password" />
+      </label>
+      <Button tone="primary" className="mt-1">
+        Sign in
+      </Button>
+    </form>
+  </CardContent>
+</Card>
+```
+
+## Card action
+
+Use `CardAction` in the header for secondary controls.
+
+<Preview>
+  <Card className="w-96">
+    <CardHeader>
+      <div>
+        <CardTitle>Team billing</CardTitle>
+        <CardDescription>Next invoice on June 1</CardDescription>
+      </div>
+      <CardAction>
+        <Button tone="outline">
+          View
+        </Button>
+      </CardAction>
+    </CardHeader>
+    <CardContent>
+      <div className="rounded-[var(--radius-md)] bg-[var(--bg-subtle)] p-3 text-sm">
+        $128.00 estimated for this cycle.
+      </div>
+    </CardContent>
+    <CardFooter>
+      <Button tone="ghost">
+        Cancel
+      </Button>
+      <Button tone="primary">
+        Upgrade
+      </Button>
+    </CardFooter>
+  </Card>
+</Preview>
+
+```tsx
+<Card>
+  <CardHeader>
+    <div>
+      <CardTitle>Team billing</CardTitle>
+      <CardDescription>Next invoice on June 1</CardDescription>
+    </div>
+    <CardAction>
+      <Button tone="outline">
+        View
+      </Button>
+    </CardAction>
+  </CardHeader>
+  <CardContent>$128.00 estimated for this cycle.</CardContent>
+  <CardFooter>
+    <Button tone="primary">
+      Upgrade
+    </Button>
+  </CardFooter>
+</Card>
+```
+
+## Image card
+
+<Preview>
+  <Card className="w-[26rem]">
+    <img
+      src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1365&auto=format&fit=crop"
+      alt="Modern lounge chair"
+      className="aspect-[4/3] w-full object-cover"
+    />
+    <CardContent className="p-6">
+      <CardTitle>Lounge Chair</CardTitle>
+      <CardDescription className="mt-3 text-base leading-7">
+        This chair brings sculptural comfort to reading corners and lounge spaces.
+      </CardDescription>
+    </CardContent>
+    <CardFooter className="justify-between">
+      <div className="text-2xl font-semibold tracking-normal">$320</div>
+      <div className="flex items-center gap-2">
+        <Button tone="primary">Buy now</Button>
+        <Button tone="ghost">Add to cart</Button>
+      </div>
+    </CardFooter>
+  </Card>
+</Preview>
+
+```tsx
+<Card className="w-[26rem]">
+  <img
+    src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1365&auto=format&fit=crop"
+    alt="Modern lounge chair"
+    className="aspect-[4/3] w-full object-cover"
+  />
+  <CardContent className="p-6">
+    <CardTitle>Lounge Chair</CardTitle>
+    <CardDescription className="mt-3 text-base leading-7">
+      This chair brings sculptural comfort to reading corners and lounge spaces.
+    </CardDescription>
+  </CardContent>
+  <CardFooter className="justify-between">
+    <div className="text-2xl font-semibold tracking-normal">$320</div>
+    <div className="flex items-center gap-2">
+      <Button tone="primary">Buy now</Button>
+      <Button tone="ghost">Add to cart</Button>
+    </div>
+  </CardFooter>
+</Card>
+```
+
+## Tones
+
+<Preview>
+  <div className="grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <Card>
+      <CardHeader>
+        <div>
+          <CardTitle>Default</CardTitle>
+          <CardDescription>Standard grouped content.</CardDescription>
+        </div>
+      </CardHeader>
+    </Card>
+    <Card tone="subtle">
+      <CardHeader>
+        <div>
+          <CardTitle>Subtle</CardTitle>
+          <CardDescription>Quiet section grouping.</CardDescription>
+        </div>
+      </CardHeader>
+    </Card>
+    <Card tone="outline">
+      <CardHeader>
+        <div>
+          <CardTitle>Outline</CardTitle>
+          <CardDescription>Low-emphasis framing.</CardDescription>
+        </div>
+      </CardHeader>
+    </Card>
+    <Card tone="elevated">
+      <CardHeader>
+        <div>
+          <CardTitle>Elevated</CardTitle>
+          <CardDescription>More prominent surfaces.</CardDescription>
+        </div>
+      </CardHeader>
+    </Card>
+    <Card tone="accent">
+      <CardHeader>
+        <div>
+          <CardTitle>Accent</CardTitle>
+          <CardDescription className="text-inherit opacity-80">
+            Highlighted calls for attention.
+          </CardDescription>
+        </div>
+      </CardHeader>
+    </Card>
+  </div>
+</Preview>
+
+## Props
+
+| Component         | Props                                   |
+| ----------------- | --------------------------------------- |
+| `Card`            | `tone`, standard `<div>` attributes     |
+| `CardHeader`      | Standard `<div>` attributes             |
+| `CardTitle`       | Standard `<h3>` attributes              |
+| `CardDescription` | Standard `<p>` attributes               |
+| `CardAction`      | Standard `<div>` attributes             |
+| `CardContent`     | Standard `<div>` attributes             |
+| `CardFooter`      | Standard `<div>` attributes             |
+
+| Prop   | Type                                                        | Default     |
+| ------ | ----------------------------------------------------------- | ----------- |
+| `tone` | `"default" \| "subtle" \| "outline" \| "elevated" \| "accent"` | `"default"` |

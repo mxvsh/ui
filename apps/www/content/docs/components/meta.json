@@ -4,6 +4,7 @@
   "pages": [
     "---Form---",
     "button",
+    "card",
     "input",
     "select",
     "---Overlay---",

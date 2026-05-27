@@ -14,7 +14,8 @@
     "./lib/cn": {
       "types": "./dist/lib/cn.d.ts",
       "import": "./dist/lib/cn.js"
-    }
+    },
+    "./layers.css": "./src/tokens/layers.css"
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
