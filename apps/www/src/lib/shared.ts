@@ -4,6 +4,6 @@ export const docsImageRoute = '/og/docs';
 
 export const gitConfig = {
   user: 'mxvsh',
-  repo: 'mxvsh-ui',
+  repo: 'ui',
   branch: 'main',
 };

@@ -52,8 +52,8 @@ export function SiteShell({
       <header className="sticky top-0 z-40 border-b bg-fd-background/95 backdrop-blur supports-[backdrop-filter]:bg-fd-background/75">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight">
-            <span className="inline-block h-6 w-6 rounded-md bg-fd-primary" />
-            mxv-ui
+            <img src="/favicon.svg" className="inline-block h-8 w-8 rounded-md" />
+            UI
           </Link>
           <nav className="flex items-center gap-4 text-sm text-fd-muted-foreground">
             <ThemeSwitch />
