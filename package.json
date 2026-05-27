@@ -10,17 +10,17 @@
   "scripts": {
     "build": "bun run --filter '*' build",
     "typecheck": "bun run --filter '*' typecheck",
-    "dev": "bun run --filter '*' dev",
-    "ui:build": "bun run --filter '@mxv/ui' build",
-    "ui:dev": "bun run --filter '@mxv/ui' storybook",
     "storybook": "bun run --filter '@mxv/ui' storybook",
     "build-storybook": "bun run --filter '@mxv/ui' build-storybook",
-    "playground": "bun run --filter '@mxv/playground' dev",
     "lint": "biome check .",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "bun run --filter './packages/*' build && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.15",
+    "@changesets/cli": "^2.31.0",
     "@types/bun": "latest",
     "typescript": "^5.9.3"
   }
