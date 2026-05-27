@@ -1,5 +1,11 @@
 # @mxv/ui
 
+## 0.1.0-beta.2
+
+### Minor Changes
+
+- 36343ef: Add checkbox
+
 ## 0.1.0-beta.1
 
 ### Minor Changes
