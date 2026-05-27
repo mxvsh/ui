@@ -12,6 +12,7 @@ export default defineConfig({
     mdx(),
     tailwindcss(),
     tanstackStart({
+      target: 'cloudflare-module',
       prerender: {
         enabled: true,
       },
