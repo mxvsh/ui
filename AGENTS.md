@@ -61,4 +61,4 @@ Keep each commit focused. Stage only files related to the requested change, and 
 
 Do not revert unrelated work. The working tree may contain user changes or generated files from another task.
 
-Stage only files related to the requested change. Use short conventional commit messages when asked to commit.
+Stage only files related to the requested change. Use short commit messages when asked to commit.

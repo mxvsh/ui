@@ -1,0 +1,66 @@
+---
+title: Checkbox
+description: Accessible checkbox built on Radix UI with indeterminate state support.
+---
+
+<Preview>
+  <Checkbox defaultChecked aria-label="Accept terms" />
+</Preview>
+
+```tsx
+import { Checkbox } from "@mxv/ui"
+
+<Checkbox defaultChecked />
+```
+
+## With label
+
+<Preview>
+  <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
+    <Checkbox id="terms" />
+    <span>Accept terms and conditions</span>
+  </label>
+</Preview>
+
+```tsx
+<label className="flex items-center gap-2 text-sm cursor-pointer select-none">
+  <Checkbox id="terms" />
+  <span>Accept terms and conditions</span>
+</label>
+```
+
+## Indeterminate
+
+<Preview>
+  <Checkbox indeterminate aria-label="Select all" />
+</Preview>
+
+```tsx
+<Checkbox indeterminate />
+```
+
+## Disabled
+
+<Preview>
+  <div className="flex items-center gap-4">
+    <Checkbox disabled aria-label="Disabled unchecked" />
+    <Checkbox disabled defaultChecked aria-label="Disabled checked" />
+  </div>
+</Preview>
+
+```tsx
+<Checkbox disabled />
+<Checkbox disabled defaultChecked />
+```
+
+## Props
+
+| Prop            | Type                                      | Default     |
+| --------------- | ----------------------------------------- | ----------- |
+| `checked`       | `boolean \| "indeterminate"`              | —           |
+| `defaultChecked`| `boolean`                                 | `false`     |
+| `indeterminate` | `boolean`                                 | `false`     |
+| `onCheckedChange` | `(checked: boolean \| "indeterminate") => void` | — |
+| `disabled`      | `boolean`                                 | `false`     |
+
+Inherits all Radix `Checkbox.Root` props.

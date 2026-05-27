@@ -1,0 +1,55 @@
+---
+title: Switch
+description: Toggle switch built on Radix UI for boolean on/off settings.
+---
+
+<Preview>
+  <Switch defaultChecked aria-label="Enable feature" />
+</Preview>
+
+```tsx
+import { Switch } from "@mxv/ui"
+
+<Switch defaultChecked />
+```
+
+## With label
+
+<Preview>
+  <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
+    <Switch id="notifications" />
+    <span>Enable notifications</span>
+  </label>
+</Preview>
+
+```tsx
+<label className="flex items-center gap-2 text-sm cursor-pointer select-none">
+  <Switch id="notifications" />
+  <span>Enable notifications</span>
+</label>
+```
+
+## Disabled
+
+<Preview>
+  <div className="flex items-center gap-4">
+    <Switch disabled aria-label="Disabled off" />
+    <Switch disabled defaultChecked aria-label="Disabled on" />
+  </div>
+</Preview>
+
+```tsx
+<Switch disabled />
+<Switch disabled defaultChecked />
+```
+
+## Props
+
+| Prop              | Type                            | Default |
+| ----------------- | ------------------------------- | ------- |
+| `checked`         | `boolean`                       | —       |
+| `defaultChecked`  | `boolean`                       | `false` |
+| `onCheckedChange` | `(checked: boolean) => void`    | —       |
+| `disabled`        | `boolean`                       | `false` |
+
+Inherits all Radix `Switch.Root` props.
