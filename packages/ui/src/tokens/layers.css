@@ -1,0 +1,13 @@
+/* mxv-ui utility layers. */
+
+@utility shadow-elevation-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+@utility shadow-elevation-md {
+  box-shadow: var(--shadow-md);
+}
+
+@utility shadow-elevation-lg {
+  box-shadow: var(--shadow-lg);
+}
