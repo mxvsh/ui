@@ -1,6 +1,10 @@
 {
   "name": "@mxv/ui",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0-beta.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mxvsh/ui"
+  },
   "type": "module",
   "sideEffects": [
     "**/*.css"
