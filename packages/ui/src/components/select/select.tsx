@@ -1,7 +1,7 @@
 import { Check, ChevronDown, ChevronUp } from "lucide-react"
 import { Select as RadixSelect } from "radix-ui"
 import type { ComponentPropsWithoutRef } from "react"
-import { cn } from "../../lib/cn"
+import { cn } from "@/lib/cn"
 
 export const Select = RadixSelect.Root
 export const SelectValue = RadixSelect.Value

@@ -21,7 +21,9 @@
   "devDependencies": {
     "@biomejs/biome": "^2.4.15",
     "@changesets/cli": "^2.31.0",
+    "@mxv/ui": "workspace:*",
     "@types/bun": "latest",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite-plugin-dts": "^5.0.1"
   }
 }

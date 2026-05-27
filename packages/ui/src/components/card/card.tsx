@@ -1,5 +1,5 @@
 import { forwardRef, type HTMLAttributes } from "react"
-import { cn } from "../../lib/cn"
+import { cn } from "@/lib/cn"
 
 export type CardTone = "default" | "subtle" | "outline" | "elevated" | "accent"
 

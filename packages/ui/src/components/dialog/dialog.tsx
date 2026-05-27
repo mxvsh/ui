@@ -6,7 +6,7 @@ import {
   type HTMLAttributes,
 } from "react"
 import { X } from "lucide-react"
-import { cn } from "../../lib/cn"
+import { cn } from "@/lib/cn"
 
 export const Dialog = RadixDialog.Root
 export const DialogTrigger = RadixDialog.Trigger

@@ -1,6 +1,6 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react"
 import { Slot } from "radix-ui"
-import { cn } from "../../lib/cn"
+import { cn } from "@/lib/cn"
 
 export type ButtonTone = "default" | "primary" | "ghost" | "outline" | "danger" | "link"
 export type ButtonSize = "xs" | "sm" | "md" | "lg" | "icon-sm" | "icon" | "icon-lg"

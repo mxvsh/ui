@@ -6,8 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "module": "ESNext",
-    "target": "ES2022"
+    "emitDeclarationOnly": true
   },
   "include": ["src/**/*"],
   "exclude": [
