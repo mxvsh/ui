@@ -5,6 +5,7 @@ import {
   type ElementRef,
   type HTMLAttributes,
 } from "react"
+import { X } from "lucide-react"
 import { cn } from "../../lib/cn"
 
 export const Dialog = RadixDialog.Root
@@ -44,20 +45,24 @@ export const DialogContent = forwardRef<
           "overflow-hidden rounded-[var(--radius-lg)] border border-[var(--popover-border)]",
           "bg-[var(--popover)] text-[var(--popover-fg)] shadow-elevation-lg",
           "focus:outline-none",
-          "data-[state=open]:animate-[mxvDialogIn_220ms_cubic-bezier(0.2,0.7,0.2,1)]",
+          "data-[state=open]:animate-[mxvDialogIn_220ms_cubic-bezier(0.2,0.7,0.2,1)_both]",
           "data-[state=closed]:animate-[mxvDialogOut_180ms_cubic-bezier(0.2,0.7,0.2,1)_forwards]",
           className
         )}
         {...props}
       >
         {children}
+        <RadixDialog.Close className="absolute right-4 top-4 rounded-md p-1 text-[var(--fg-muted)] opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]">
+          <X className="h-4 w-4" />
+          <span className="sr-only">Close</span>
+        </RadixDialog.Close>
       </RadixDialog.Content>
     </DialogPortal>
   )
 })
 
 export function DialogHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("flex flex-col gap-1.5 px-5 pt-5", className)} {...props} />
+  return <div className={cn("flex flex-col gap-1.5 px-5 pt-5 pb-5", className)} {...props} />
 }
 
 export function DialogBody({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
