@@ -5,6 +5,7 @@
     "@mxv/ui": "0.0.0"
   },
   "changesets": [
-    "deep-tires-act"
+    "deep-tires-act",
+    "fresh-cooks-add"
   ]
 }
