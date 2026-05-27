@@ -1,0 +1,51 @@
+---
+title: Introduction
+description: A small, opinionated React UI library built on Tailwind v4 and radix-ui.
+icon: BookOpen
+---
+
+mxv-ui is a single-package React component library distributed via npm —
+opinionated defaults, Tailwind v4 tokens, radix-ui under the hood.
+
+## What's in the box
+
+- **7 components** — Button, Input, Dialog, DropdownMenu, Popover, Select, Tooltip
+- **oklch design tokens** — perceptually-uniform color stops, fully overridable via CSS variables
+- **Tailwind v4** — no plugin, no `tailwind.config.js` needed beyond importing `@mxv/ui/globals.css`
+- **React 19 only** — uses the new `radix-ui` umbrella package
+- **~20 KB ESM**, fully tree-shakable
+
+## Quick start
+
+```sh
+bun add @mxv/ui
+```
+
+```css
+/* your globals.css */
+@import "@mxv/ui/globals.css";
+```
+
+```tsx
+import { Button } from "@mxv/ui"
+
+export default function App() {
+  return <Button tone="primary">Hello</Button>
+}
+```
+
+<Cards>
+  <Card title="Installation" href="/docs/get-started/installation" />
+  <Card title="Theming" href="/docs/theming" />
+  <Card title="Button" href="/components/button" />
+</Cards>
+
+## What this isn't
+
+- **Not a sprawling kit.** 7 components today; new ones get added when actually needed.
+- **Not headless.** Components ship opinionated defaults. You restyle via tokens + className,
+  not by replacing internals.
+- **Not a managed product.** No release cadence, no support promises.
+
+For honest comparisons see [vs shadcn](https://github.com/mxvsh/mxvsh-ui/blob/main/docs/vs-shadcn.md)
+and [vs HeroUI](https://github.com/mxvsh/mxvsh-ui/blob/main/docs/vs-heroui.md) in the repo.

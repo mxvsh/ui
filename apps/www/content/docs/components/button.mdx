@@ -1,0 +1,60 @@
+---
+title: Button
+description: Triggers actions. Six tones, seven sizes, polymorphic via asChild.
+---
+
+<Preview>
+  <Button tone="primary">Primary</Button>
+</Preview>
+
+```tsx
+import { Button } from "@mxv/ui"
+
+<Button tone="primary">Primary</Button>
+```
+
+## Tones
+
+<Preview>
+  <div className="flex flex-wrap items-center gap-2">
+    <Button>Default</Button>
+    <Button tone="primary">Primary</Button>
+    <Button tone="ghost">Ghost</Button>
+    <Button tone="outline">Outline</Button>
+    <Button tone="danger">Danger</Button>
+    <Button tone="link">Link</Button>
+  </div>
+</Preview>
+
+## Sizes
+
+<Preview>
+  <div className="flex flex-wrap items-center gap-2">
+    <Button size="xs">xs</Button>
+    <Button size="sm">sm</Button>
+    <Button size="md">md</Button>
+    <Button size="lg">lg</Button>
+  </div>
+</Preview>
+
+## Polymorphic with `asChild`
+
+Render as a link or any other element via Radix's `Slot` pattern:
+
+```tsx
+<Button asChild>
+  <a href="/docs">Read the docs</a>
+</Button>
+```
+
+## Props
+
+| Prop        | Type                                                                  | Default     |
+| ----------- | --------------------------------------------------------------------- | ----------- |
+| `tone`      | `"default" \| "primary" \| "ghost" \| "outline" \| "danger" \| "link"` | `"default"` |
+| `size`      | `"xs" \| "sm" \| "md" \| "lg" \| "icon-sm" \| "icon" \| "icon-lg"`    | `"md"`      |
+| `asChild`   | `boolean`                                                             | `false`     |
+| `iconStart` | `ReactNode`                                                           | —           |
+| `iconEnd`   | `ReactNode`                                                           | —           |
+
+Inherits all standard `<button>` attributes.

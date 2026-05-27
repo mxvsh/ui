@@ -1,0 +1,16 @@
+{
+  "title": "Components",
+  "icon": "Boxes",
+  "pages": [
+    "---Form---",
+    "button",
+    "input",
+    "select",
+    "---Overlay---",
+    "dialog",
+    "popover",
+    "tooltip",
+    "---Menu---",
+    "dropdown-menu"
+  ]
+}

@@ -1,0 +1,38 @@
+---
+title: Tooltip
+description: Contextual hover/focus tooltip. Requires a TooltipProvider parent.
+---
+
+<Preview>
+  <TooltipProvider delayDuration={150}>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button tone="ghost">Hover me</Button>
+      </TooltipTrigger>
+      <TooltipContent>Some helpful context</TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+</Preview>
+
+```tsx
+import {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  Button,
+} from "@mxv/ui"
+
+// Wrap your app once
+<TooltipProvider delayDuration={150}>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button tone="ghost">Hover me</Button>
+    </TooltipTrigger>
+    <TooltipContent>Some helpful context</TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+```
+
+`TooltipProvider` only needs to wrap once near the root — every `Tooltip` in
+the tree shares it.

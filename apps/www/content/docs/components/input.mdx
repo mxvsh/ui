@@ -1,0 +1,46 @@
+---
+title: Input
+description: Styled native input with invalid-state support.
+---
+
+<Preview>
+  <Input placeholder="Type something…" className="w-72" />
+</Preview>
+
+```tsx
+import { Input } from "@mxv/ui"
+
+<Input placeholder="Type something…" />
+```
+
+## Invalid state
+
+<Preview>
+  <Input
+    invalid
+    defaultValue="Wrong value"
+    aria-label="Invalid input"
+    className="w-72"
+  />
+</Preview>
+
+```tsx
+<Input invalid defaultValue="Wrong value" />
+```
+
+The `invalid` prop sets `aria-invalid="true"` and applies the danger-tinted
+focus ring.
+
+## Disabled
+
+<Preview>
+  <Input disabled defaultValue="Disabled" className="w-72" />
+</Preview>
+
+## Props
+
+| Prop      | Type      | Default |
+| --------- | --------- | ------- |
+| `invalid` | `boolean` | `false` |
+
+Inherits all standard `<input>` attributes.

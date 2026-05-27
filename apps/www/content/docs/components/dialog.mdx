@@ -1,0 +1,78 @@
+---
+title: Dialog
+description: Modal dialog built on Radix Dialog. Header, body, footer slots.
+---
+
+<Preview>
+  <Dialog>
+    <DialogTrigger asChild>
+      <Button tone="primary">Open dialog</Button>
+    </DialogTrigger>
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle>Delete project</DialogTitle>
+        <DialogDescription>
+          This action can't be undone. The project and its history will be permanently removed.
+        </DialogDescription>
+      </DialogHeader>
+      <DialogFooter>
+        <DialogClose asChild>
+          <Button>Cancel</Button>
+        </DialogClose>
+        <Button tone="danger">Delete</Button>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+</Preview>
+
+```tsx
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+  Button,
+} from "@mxv/ui"
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button tone="primary">Open dialog</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Delete project</DialogTitle>
+      <DialogDescription>This action can't be undone.</DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose asChild>
+        <Button>Cancel</Button>
+      </DialogClose>
+      <Button tone="danger">Delete</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+## Anatomy
+
+| Part                 | Notes                                                  |
+| -------------------- | ------------------------------------------------------ |
+| `Dialog`             | Radix `Root` re-export.                                |
+| `DialogTrigger`      | Radix `Trigger`. Pass `asChild` to compose your button. |
+| `DialogContent`      | Portaled overlay + content. Includes animations.        |
+| `DialogHeader`       | Padded header slot for title + description.            |
+| `DialogTitle`        | Required for accessibility (radix enforces this).      |
+| `DialogDescription`  | Optional supporting copy.                              |
+| `DialogBody`         | Scrollable content area.                               |
+| `DialogFooter`       | Right-aligned action row with top border.              |
+| `DialogClose`        | Radix `Close` re-export.                               |
+
+## Accessibility
+
+Inherits Radix Dialog: focus trap, scroll lock, `Esc` to close, `aria-modal`.
+Always include `DialogTitle` even if you visually hide it — Radix will warn
+in dev otherwise.

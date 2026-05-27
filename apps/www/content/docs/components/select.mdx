@@ -1,0 +1,44 @@
+---
+title: Select
+description: Native-style select built on Radix Select.
+---
+
+<Preview>
+  <div className="w-64">
+    <Select>
+      <SelectTrigger>
+        <SelectValue placeholder="Pick a fruit" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="apple">Apple</SelectItem>
+        <SelectItem value="banana">Banana</SelectItem>
+        <SelectItem value="cherry">Cherry</SelectItem>
+        <SelectItem value="grape">Grape</SelectItem>
+      </SelectContent>
+    </Select>
+  </div>
+</Preview>
+
+```tsx
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@mxv/ui"
+
+<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Pick a fruit" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="apple">Apple</SelectItem>
+    <SelectItem value="banana">Banana</SelectItem>
+    <SelectItem value="cherry">Cherry</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+The full Radix Select API is available — `SelectGroup`, `SelectLabel`,
+`SelectSeparator`, etc.

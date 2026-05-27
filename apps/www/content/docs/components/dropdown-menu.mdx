@@ -1,0 +1,43 @@
+---
+title: DropdownMenu
+description: Menu surface for actions. Built on Radix DropdownMenu.
+---
+
+<Preview>
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button>Menu</Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent>
+      <DropdownMenuItem>Profile</DropdownMenuItem>
+      <DropdownMenuItem>Settings</DropdownMenuItem>
+      <DropdownMenuItem>Log out</DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+</Preview>
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  Button,
+} from "@mxv/ui"
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button>Menu</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Settings</DropdownMenuItem>
+    <DropdownMenuItem>Log out</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+mxv-ui re-exports the full Radix DropdownMenu surface — sub-menus, radio
+groups, checkbox items, separators, labels. See the
+[Radix docs](https://www.radix-ui.com/primitives/docs/components/dropdown-menu)
+for the full API.

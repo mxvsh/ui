@@ -1,0 +1,32 @@
+---
+title: Popover
+description: Floating panel for forms, info, or quick actions.
+---
+
+<Preview>
+  <Popover>
+    <PopoverTrigger asChild>
+      <Button tone="outline">Open popover</Button>
+    </PopoverTrigger>
+    <PopoverContent className="w-64 space-y-2">
+      <p className="text-sm font-medium">Quick edit</p>
+      <Input placeholder="New name" />
+    </PopoverContent>
+  </Popover>
+</Preview>
+
+```tsx
+import { Popover, PopoverTrigger, PopoverContent, Input, Button } from "@mxv/ui"
+
+<Popover>
+  <PopoverTrigger asChild>
+    <Button tone="outline">Open popover</Button>
+  </PopoverTrigger>
+  <PopoverContent className="w-64">
+    <Input placeholder="New name" />
+  </PopoverContent>
+</Popover>
+```
+
+Default `sideOffset` is `6`, `align` is `"center"`. Both are overridable as
+props on `PopoverContent`.

@@ -1,0 +1,70 @@
+---
+title: Installation
+description: Set up mxv-ui in your React + Tailwind v4 project.
+icon: Download
+---
+
+## Requirements
+
+- React **19** (peer dep)
+- Tailwind CSS **v4** (peer dep)
+- A bundler — Vite, Next.js, Remix, TanStack Start, Bun.serve with HTML imports, etc.
+
+## Install
+
+```sh
+bun add @mxv/ui
+```
+
+Or with npm / pnpm / yarn — mxv-ui is plain ESM, package manager doesn't matter.
+
+## Import the styles
+
+Add this line **once** to your global stylesheet:
+
+```css
+@import "@mxv/ui/globals.css";
+```
+
+That pulls in:
+
+- The Tailwind v4 `@theme` block exposing mxv-ui's color/radius tokens as Tailwind
+  utilities (`bg-bg`, `text-fg-muted`, `rounded-lg`, etc.)
+- The base CSS variables (`--bg`, `--fg`, `--accent`, …)
+- Keyframes used by Dialog overlay/content animations
+
+## Tell Tailwind about the source
+
+Tailwind v4 needs to scan `@mxv/ui` for the class names used inside its components.
+Add an `@source` directive in your CSS:
+
+```css
+@import "@mxv/ui/globals.css";
+@source "../node_modules/@mxv/ui/dist/**/*.js";
+```
+
+Adjust the relative path to your project layout.
+
+## Use a component
+
+```tsx
+import { Button } from "@mxv/ui"
+
+export default function Page() {
+  return <Button tone="primary">Click me</Button>
+}
+```
+
+<Preview>
+  <Button tone="primary">Click me</Button>
+</Preview>
+
+## Dark mode
+
+mxv-ui ships a `.dark` class variant. Toggle it on `<html>` or `<body>`:
+
+```tsx
+<html className={isDark ? "dark" : ""}>
+```
+
+All tokens flip automatically. There's no provider component — it's just a class.
