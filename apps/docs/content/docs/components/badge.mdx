@@ -1,0 +1,25 @@
+---
+title: Badge
+description: Compact labels and counts.
+icon: Tag
+---
+
+<ComponentPreview>
+  <Badge>Default</Badge>
+  <Badge variant="secondary">Secondary</Badge>
+  <Badge variant="outline">Outline</Badge>
+  <Badge variant="destructive">Destructive</Badge>
+</ComponentPreview>
+
+The `count` size is a compact chip designed to sit inside buttons.
+
+<ComponentPreview>
+  <Badge size="count">9</Badge>
+  <Badge variant="secondary" size="count">99+</Badge>
+</ComponentPreview>
+
+```tsx
+import { Badge } from "@mxv/ui";
+
+<Badge variant="secondary" size="count">2</Badge>;
+```

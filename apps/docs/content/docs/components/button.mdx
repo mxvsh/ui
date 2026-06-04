@@ -1,0 +1,83 @@
+---
+title: Button
+description: Pill-shaped, accessible buttons with variants, sizes, icons, groups, and loading.
+icon: MousePointerClick
+---
+
+The flagship component. Pill radius by default, with five variants, four sizes, leading/trailing
+icons, an `asChild` escape hatch, and a loading state.
+
+## Variants
+
+<ComponentPreview>
+  <Button variant="primary">Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button variant="destructive">Destructive</Button>
+</ComponentPreview>
+
+## Sizes
+
+<ComponentPreview>
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+</ComponentPreview>
+
+## Rounded
+
+Pill (`full`) is the default; `lg` and `md` are available when you want softer corners.
+
+<ComponentPreview>
+  <Button rounded="full">Pill</Button>
+  <Button rounded="lg">Large radius</Button>
+  <Button rounded="md">Medium radius</Button>
+</ComponentPreview>
+
+## With a count badge
+
+<ComponentPreview>
+  <Button variant="secondary">
+    Like
+    <Badge variant="secondary" size="count">2</Badge>
+  </Button>
+</ComponentPreview>
+
+## Button group
+
+Join related actions into a single segmented pill.
+
+<ComponentPreview>
+  <ButtonGroup>
+    <Button variant="ghost">Documents</Button>
+    <Button variant="ghost">Export</Button>
+    <Button variant="ghost">Share</Button>
+  </ButtonGroup>
+</ComponentPreview>
+
+## Loading
+
+<ComponentPreview>
+  <Button variant="primary" loading>Saving</Button>
+</ComponentPreview>
+
+## Props
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `primary \| secondary \| outline \| ghost \| destructive` | `secondary` |
+| `size` | `sm \| md \| lg \| icon` | `md` |
+| `rounded` | `full \| lg \| md` | `full` |
+| `leadingIcon` | `ReactNode` | — |
+| `trailingIcon` | `ReactNode` | — |
+| `loading` | `boolean` | `false` |
+| `asChild` | `boolean` | `false` |
+
+## Usage
+
+```tsx
+import { Button } from "@mxv/ui";
+
+<Button variant="primary" size="lg">Get started</Button>;
+```

@@ -1,0 +1,36 @@
+---
+title: Theming
+description: Customize colors, radius, and shadows with CSS variables.
+icon: Palette
+---
+
+All design decisions are CSS variables defined in `@mxv/ui/styles.css` and mapped onto Tailwind
+via `@theme inline`. Override them in your own CSS to retheme everything.
+
+## Tokens
+
+| Variable | Purpose |
+| --- | --- |
+| `--background` / `--foreground` | Page surface and text |
+| `--card` / `--card-foreground` | Raised surfaces |
+| `--muted` / `--muted-foreground` | Subtle backgrounds and secondary text |
+| `--primary` / `--primary-foreground` | The accent (blue by default) |
+| `--border` / `--input` / `--ring` | Lines and focus rings |
+| `--radius` | Base radius (drives the pill scale) |
+
+## Override the accent
+
+```css
+:root {
+  --primary: oklch(0.55 0.2 150); /* swap blue for green */
+}
+```
+
+<ComponentPreview>
+  <Button variant="primary">Primary</Button>
+  <Badge>Accent</Badge>
+</ComponentPreview>
+
+## Dark theme
+
+Provide overrides under `[data-theme="dark"]` — the library already ships sensible defaults.

@@ -1,0 +1,30 @@
+---
+title: Introduction
+description: An opinionated React component library built on Tailwind v4 and Radix primitives.
+icon: Rocket
+---
+
+**mxv/ui** is an opinionated component library: accessible Radix primitives, styled with
+Tailwind v4 design tokens, with a pill-first, soft-shadow aesthetic. It ships as a
+tree-shakable, RSC-aware npm package — `@mxv/ui`.
+
+## Principles
+
+- **Opinionated by default.** Pill-shaped controls, a single blue accent, hairline borders,
+  and soft elevation — sensible out of the box, themeable via CSS variables.
+- **Accessible primitives.** Built on [Radix UI](https://www.radix-ui.com) for keyboard and
+  screen-reader support.
+- **Tailwind v4, CSS-first.** Tokens live as CSS variables and map onto Tailwind's scales.
+- **Tree-shakable + RSC-aware.** Every component is its own ES module; interactive ones carry
+  `"use client"`.
+
+## Live preview
+
+<ComponentPreview>
+  <Button variant="secondary">Copy link</Button>
+  <Button variant="primary">Sign Up</Button>
+  <Button variant="outline">Login</Button>
+</ComponentPreview>
+
+Continue to [Installation](/docs/installation) to add it to your app, or jump straight to the
+[Button](/docs/components/button) component.

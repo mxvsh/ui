@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* @mxv/ui design tokens + animations (drives the whole docs look & feel) */
+@import "@mxv/ui/styles.css";
+
+/*
+ * Tailwind v4 doesn't scan node_modules, so generate the utility classes used
+ * inside @mxv/ui components by pointing at the library source directly.
+ */
+@source "../../../../packages/ui/src/**/*.{ts,tsx}";
+
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  /* Override react-remove-scroll's inline scrollbar compensation (Radix dialogs). */
+  html > body[data-scroll-locked] {
+    /* biome-ignore lint/complexity/noImportantStyles: must beat inline styles */
+    margin-right: 0px !important;
+    /* biome-ignore lint/complexity/noImportantStyles: must beat inline styles */
+    --removed-body-scroll-bar-size: 0px !important;
+  }
+}

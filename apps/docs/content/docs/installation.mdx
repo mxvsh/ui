@@ -1,0 +1,45 @@
+---
+title: Installation
+description: Add @mxv/ui to your Tailwind v4 + React 19 project.
+icon: Download
+---
+
+## Install
+
+<pre><code>bun add @mxv/ui</code></pre>
+
+`@mxv/ui` lists `react` and `react-dom` (v19) as peer dependencies.
+
+## Import the styles
+
+`@mxv/ui` is Tailwind v4 first. In your global CSS, import Tailwind, then the library tokens:
+
+```css
+@import "tailwindcss";
+@import "@mxv/ui/styles.css";
+```
+
+Because Tailwind v4 doesn't scan `node_modules`, add a `@source` so the utility classes used
+inside the components are generated:
+
+```css
+@source "../node_modules/@mxv/ui/dist/**/*.js";
+```
+
+## Use a component
+
+```tsx
+import { Button } from "@mxv/ui";
+
+export function Example() {
+  return <Button variant="primary">Get started</Button>;
+}
+```
+
+## Dark mode
+
+Tokens switch on `data-theme="dark"` on the `<html>` element:
+
+```ts
+document.documentElement.setAttribute("data-theme", "dark");
+```

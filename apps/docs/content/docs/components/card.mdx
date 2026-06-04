@@ -1,0 +1,24 @@
+---
+title: Card
+description: A surface for grouping content.
+icon: SquareStack
+---
+
+<ComponentPreview center={false}>
+  <Card className="w-full max-w-sm">
+    <CardHeader>
+      <CardTitle>Upgrade plan</CardTitle>
+      <CardDescription>Unlock more components and themes.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p className="text-sm text-muted-foreground">Billed monthly. Cancel anytime.</p>
+    </CardContent>
+    <CardFooter>
+      <Button variant="primary">Upgrade</Button>
+    </CardFooter>
+  </Card>
+</ComponentPreview>
+
+```tsx
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@mxv/ui";
+```

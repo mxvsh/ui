@@ -1,0 +1,29 @@
+---
+title: Tooltip
+description: A hover/focus hint built on Radix.
+icon: MessageSquare
+---
+
+Wrap your app (or a subtree) in `TooltipProvider`, then compose a `Tooltip`.
+
+<ComponentPreview>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="secondary">Hover me</Button>
+    </TooltipTrigger>
+    <TooltipContent>Added to your library</TooltipContent>
+  </Tooltip>
+</ComponentPreview>
+
+```tsx
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@mxv/ui";
+
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button>Hover me</Button>
+    </TooltipTrigger>
+    <TooltipContent>Added to your library</TooltipContent>
+  </Tooltip>
+</TooltipProvider>;
+```

@@ -1,0 +1,21 @@
+---
+title: Input
+description: Text field with label support.
+icon: TextCursorInput
+---
+
+<ComponentPreview center={false}>
+  <div className="w-full max-w-sm space-y-2">
+    <Label htmlFor="email">Email</Label>
+    <Input id="email" type="email" placeholder="you@example.com" />
+  </div>
+</ComponentPreview>
+
+```tsx
+import { Input, Label } from "@mxv/ui";
+
+<div className="space-y-2">
+  <Label htmlFor="email">Email</Label>
+  <Input id="email" type="email" placeholder="you@example.com" />
+</div>;
+```

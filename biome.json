@@ -7,7 +7,19 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!**/dist", "!**/.next", "!**/.turbo", "!**/.source", "!**/node_modules"]
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/.next",
+      "!**/.turbo",
+      "!**/.source",
+      "!**/.output",
+      "!**/.vercel",
+      "!**/.nitro",
+      "!**/.tanstack",
+      "!**/routeTree.gen.ts",
+      "!**/node_modules"
+    ]
   },
   "formatter": {
     "enabled": true,
