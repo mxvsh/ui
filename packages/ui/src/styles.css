@@ -1,0 +1,105 @@
+/*
+ * @mxv/ui design tokens (Tailwind v4, CSS-first).
+ *
+ * Consumers import Tailwind first, then these tokens:
+ *   @import "tailwindcss";
+ *   @import "@mxv/ui/styles.css";
+ *
+ * Tokens are plain CSS variables; `@theme inline` maps them onto Tailwind's
+ * color / radius / shadow scales so utilities like `bg-primary`,
+ * `text-muted-foreground`, `rounded-full`, `shadow-soft` resolve.
+ */
+
+@import "tw-animate-css";
+
+@layer base {
+  :root {
+    /* Neutral surfaces */
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.21 0.01 270);
+
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.21 0.01 270);
+
+    --muted: oklch(0.97 0.005 270);
+    --muted-foreground: oklch(0.55 0.01 270);
+
+    /* Blue accent (primary action) */
+    --primary: oklch(0.55 0.22 264);
+    --primary-foreground: oklch(0.99 0 0);
+
+    --secondary: oklch(1 0 0);
+    --secondary-foreground: oklch(0.21 0.01 270);
+
+    --destructive: oklch(0.58 0.22 27);
+    --destructive-foreground: oklch(0.99 0 0);
+
+    --accent: oklch(0.97 0.005 270);
+    --accent-foreground: oklch(0.21 0.01 270);
+
+    /* Lines & focus */
+    --border: oklch(0.92 0.004 270);
+    --input: oklch(0.92 0.004 270);
+    --ring: oklch(0.55 0.22 264);
+
+    /* Pill-first radius scale */
+    --radius: 0.625rem;
+  }
+
+  [data-theme="dark"] {
+    --background: oklch(0.18 0.01 270);
+    --foreground: oklch(0.98 0 0);
+
+    --card: oklch(0.21 0.01 270);
+    --card-foreground: oklch(0.98 0 0);
+
+    --muted: oklch(0.27 0.01 270);
+    --muted-foreground: oklch(0.7 0.01 270);
+
+    --primary: oklch(0.62 0.2 264);
+    --primary-foreground: oklch(0.99 0 0);
+
+    --secondary: oklch(0.27 0.01 270);
+    --secondary-foreground: oklch(0.98 0 0);
+
+    --destructive: oklch(0.62 0.2 27);
+    --destructive-foreground: oklch(0.99 0 0);
+
+    --accent: oklch(0.27 0.01 270);
+    --accent-foreground: oklch(0.98 0 0);
+
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 12%);
+    --ring: oklch(0.62 0.2 264);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Soft elevation matching the design language */
+  --shadow-soft: 0 1px 2px 0 oklch(0.21 0.01 270 / 6%), 0 1px 3px 0 oklch(0.21 0.01 270 / 8%);
+  --shadow-soft-md:
+    0 2px 4px -1px oklch(0.21 0.01 270 / 8%), 0 4px 8px -2px oklch(0.21 0.01 270 / 10%);
+}

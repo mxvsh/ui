@@ -1,0 +1,25 @@
+{
+  "name": "@mxv/monorepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.3.14",
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
+    "typecheck": "turbo run typecheck",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=@mxv/ui && changeset publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.16",
+    "@changesets/cli": "2.31.0",
+    "@types/bun": "1.3.14",
+    "turbo": "2.9.16",
+    "typescript": "6.0.3"
+  }
+}
