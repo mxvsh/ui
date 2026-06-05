@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@mxv/docs", "@mxv/tsconfig"]
+  "ignore": ["@mxv/docs"]
 }
