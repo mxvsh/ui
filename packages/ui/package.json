@@ -1,6 +1,6 @@
 {
   "name": "@mxv/ui",
-  "version": "0.1.0-beta.3",
+  "version": "0.1.0",
   "description": "Opinionated React component library built on Tailwind v4 and Radix primitives.",
   "type": "module",
   "license": "MIT",
